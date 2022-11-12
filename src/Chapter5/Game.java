@@ -1,5 +1,5 @@
 package Chapter5;
-
+/*
 public class Game {
     public static void main(String[] args) {
         int numOfGuess = 0;
@@ -24,3 +24,4 @@ public class Game {
         }
     }
 }
+*/

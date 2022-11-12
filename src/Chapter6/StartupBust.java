@@ -1,7 +1,5 @@
 package Chapter6;
-import Chapter5.GameHelper;
-
-import java.util.*;
+import java.util.ArrayList;
 
 public class StartupBust {
 
@@ -32,6 +30,7 @@ public class StartupBust {
         for (Startup startup : startups) {
             //ask the helper for the Startup location (an ArrayList of Strings)
             ArrayList<String> newLocation = helper.placeStartup(3);
+            startup.setLocationCells(newLocation);
             //call the setter method on this Startup to give it the location you just got from the helper
         } //close for loop
     } //close setUpGame method
@@ -56,7 +55,7 @@ public class StartupBust {
 
         for (Startup startupToTest : startups) {
             //repeat with Startups in the list
-            result = startupToTest.checkTourself(userGuess);
+            result = startupToTest.checkYourself(userGuess);
             //ask the Startup to check the user guess, looking for a hit or kill
 
             if (result.equals("hit")) {

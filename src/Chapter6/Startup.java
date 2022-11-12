@@ -14,7 +14,7 @@ public class Startup {
     public void setName(String n) {
         name = n;
     }
-    public String checkTourself(String userInput) {
+    public String checkYourself(String userInput) {
         String result = "miss";
         int index = locationCells.indexOf(userInput);
         //the ArrayList indexOf() method is in action

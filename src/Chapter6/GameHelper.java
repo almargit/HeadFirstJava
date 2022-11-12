@@ -1,9 +1,5 @@
-
-package Chapter5;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
-
+package Chapter6;
+import java.util.*;
 
 public class GameHelper {
     private static final String ALPHABET = "abcdefg";
@@ -11,7 +7,7 @@ public class GameHelper {
     private static final int GRID_SIZE = 49;
     private static final int MAX_ATTEMPTS = 200;
     static final int HORIZONTAL_INCREMENT = 1;
-    static final int VERTICAL_INCREMENT = GRID_SIZE;
+    static final int VERTICAL_INCREMENT = GRID_LENGTH;
 
     private final int[] grid = new int[GRID_SIZE];
     private final Random random = new Random();
@@ -22,9 +18,7 @@ public class GameHelper {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toLowerCase();
     }
-
     public ArrayList<String> placeStartup(int startupSize) {
-        //holds index to grid (0-48)
         int[] startupCoords = new int[startupSize];
         int attempts = 0;
         boolean success = false;
@@ -50,7 +44,6 @@ public class GameHelper {
         //System.out.println("Placed at: " + alphaCells);
         return alphaCells;
     }
-
     private boolean startupFits(int[] startupCoords, int increment) {
         int finalLocation = startupCoords[startupCoords.length - 1];
         if (increment == HORIZONTAL_INCREMENT) {
@@ -63,7 +56,7 @@ public class GameHelper {
     private boolean coordsAvailable(int[] startupCoords) {
         for (int coord : startupCoords) {
             if (grid[coord] != 0) {
-                //System.out.println("position: " + coord + " already taken");
+                //System.out.println("Position: " + coord + " already taken");
                 return false;
             }
         }
